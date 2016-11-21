@@ -58,6 +58,9 @@
                         </a>
                     </li>
                 </ul>
+                <button class="btn btn-info pull-right" ng-click="toggleDetails()">
+                    {{ showDetails ? 'Hide details' : 'Show details'}}
+                </button>
                 <div class="tab-content">
                 <ul class="media-list" tab-pane fade in active>
                     <li class="media" ng-repeat="dish in dishes | filter:fillText">
@@ -71,7 +74,7 @@
                             <h2 class="media-heading">{{dish.name}}
                              <span class="label label-danger">{{dish.label}}</span>
                              <span class="badge">{{dish.price | currency}}</span></h2>
-                            <p>{{dish.description}}</p>
+                            <p ng-show="showDetails">{{dish.description}}</p>
                         </div>
                     </li>
                 </ul>

@@ -6,6 +6,7 @@ angular.module('confusionApp', [])
 
         $scope.tab = 1;
         $scope.fillText = '';
+        $scope.showDetails = false;
         $scope.dishes=[
             {
                 name:'Uthapizza',
@@ -65,5 +66,10 @@ angular.module('confusionApp', [])
                 return false;
             }
         }
+
+        $scope.toggleDetails = function () {
+            $scope.showDetails = !$scope.showDetails;
+        }
+        
     }])
 
